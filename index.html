@@ -1,0 +1,346 @@
+<!-- Разработано: Агафоновым Евгением Алексеевичем -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header__wrapper">
+          <div class="header__left">
+            <a class="header__logo" href="#">Нейро</a>
+            <div class="header__banner">
+              <a class="header__title" href="#">Еда</a>
+              <span class="header__slogan">Еда которой не существует</span>
+            </div>
+          </div>
+          <div class="header__right">
+            <ul class="header__link-list">
+              <li class="header__link-element">
+                <a class="header__link-text" href="#">О нас</a>
+              </li>
+              <li class="header__link-element">
+                <a class="header__link-text" href="#">Меню</a>
+              </li>
+
+              <li class="header__link-element">
+                <a class="header__link-text" href="#">Доставка</a>
+              </li>
+              <li class="header__link-element">
+                <a class="header__link-text" href="#">Отзывы</a>
+              </li>
+              <li class="header__link-element">
+                <a class="header__link-text" href="#">Контакты</a>
+              </li>
+            </ul>
+            <button class="burger"></button>
+            <a href="#form" class="header__button btn">Заказать</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="intro">
+        <div class="intro__banner-wrapper">
+          <div class="intro__banner">
+            <div class="container">
+              <div class="intro__wrapper">
+                <h1 class="intro__title">Питание для активной жизни (нет)</h1>
+                <p class="intro__text">
+                  Сбалансированные блюда, созданные нейросетью
+                </p>
+
+                <div class="intro__interactive">
+                  <a class="intro__button btn" href="#form">Выбрать меню</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="menu">
+        <div class="container">
+          <p class="menu__prefix">Наше меню (которого нет)</p>
+          <h2 class="menu__title">Блюда на посмотреть</h2>
+          <ul class="menu__cards-list">
+            <!-- Похудение-->
+            <li class="menu__card-element">
+              <a class="menu__card" href="#form">
+                <div class="menu__card-wrapper">
+                  <picture class="menu__card-picture">
+                    <source
+                      srcset="images/diet_dish.webp"
+                      media="(min-width:1304px)"
+                      width
+                    />
+                    <img
+                      src="images/diet_dish.jpg"
+                      alt="Блюдо для похудения"
+                      class="menu__card-img"
+                      width="100px"
+                      height="70px"
+                    />
+                  </picture>
+                  <div class="menu__card-info">
+                    <p class="menu__card-title">Похудение</p>
+                    <p class="menu__card-text">
+                      Легкие и&nbsp;сытные блюда с&nbsp;контролем калорий.
+                    </p>
+                    <span class="menu__card-link">Подробнее</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <!-- Набор массы-->
+            <li class="menu__card-element">
+              <a class="menu__card" href="#form">
+                <div class="menu__card-wrapper">
+                  <picture>
+                    <source
+                      srcset="images/meat_dish.webp"
+                      media="(min-width:1304px)"
+                    />
+                    <img
+                      src="images/meat_dish.jpg"
+                      alt="Блюдо с белком"
+                      class="menu__card-img"
+                      width="100px"
+                      height="70px"
+                    />
+                  </picture>
+                  <div class="menu__card-info">
+                    <p class="menu__card-title">Набор массы</p>
+                    <p class="menu__card-text">
+                      Больше белка и&nbsp;энергии для роста и&nbsp;результата
+                    </p>
+                    <span class="menu__card-link">Подробнее</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <!-- Поддержание формы-->
+            <li class="menu__card-element">
+              <a class="menu__card" href="#form">
+                <div class="menu__card-wrapper">
+                  <picture>
+                    <source
+                      srcset="images/adaptive_dish.webp"
+                      media="(min-width:1304px)"
+                    />
+                    <img
+                      src="images/adaptive_dish.jpg"
+                      alt="Сбалансированное блюдо"
+                      class="menu__card-img"
+                      width="100px"
+                      height="70px"
+                    />
+                  </picture>
+                  <div class="menu__card-info">
+                    <p class="menu__card-title">Поддержание формы</p>
+                    <p class="menu__card-text">
+                      Сбалансированное меню без лишних ограничений.
+                    </p>
+                    <span class="menu__card-link">Подробнее</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <!-- Вегетарианское-->
+            <li class="menu__card-element">
+              <a class="menu__card" href="#form">
+                <div class="menu__card-wrapper">
+                  <picture>
+                    <source
+                      srcset="images/veget_dish.webp"
+                      media="(min-width:1304px)"
+                      width
+                    />
+                    <img
+                      src="images/veget_dish.jpg"
+                      alt="Вегетарианское блюдо"
+                      class="menu__card-img"
+                      width="100px"
+                      height="70px"
+                    />
+                  </picture>
+                  <div class="menu__card-info">
+                    <p class="menu__card-title">Вегетарианское меню</p>
+                    <p class="menu__card-text">
+                      Полезные и&nbsp;вкусные блюда без продуктов животного
+                      происхождения.
+                    </p>
+                    <span class="menu__card-link">Подробнее</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="feedback">
+        <div class="container">
+          <div class="feedback__wrapper">
+            <div class="feedback__argumentation">
+              <p class="feedback__appeal">Свяжитесь с&nbsp;нами</p>
+              <h2 class="feedback__title">Оставьте заявку</h2>
+              <p class="feedback__subtext">
+                Мы&nbsp;подберем для вас оптимальное меню и&nbsp;ответим
+                на&nbsp;все вопросы
+              </p>
+              <ul class="feedback__advantage-list">
+                <li class="feedback__advantage-element">
+                  Индивидуальный подбор меню
+                  <svg width="32" height="32" class="feedback__icon">
+                    <use xlink:href="images/sprite.svg#check-icon" />
+                  </svg>
+                </li>
+                <li class="feedback__advantage-element">
+                  Бесплатная консультация
+                  <svg width="32" height="32" class="feedback__icon">
+                    <use xlink:href="images/sprite.svg#check-icon" />
+                  </svg>
+                </li>
+                <li class="feedback__advantage-element">
+                  Доставка точно в&nbsp;срок
+                  <svg width="32" height="32" class="feedback__icon">
+                    <use xlink:href="images/sprite.svg#check-icon" />
+                  </svg>
+                </li>
+              </ul>
+            </div>
+            <form
+              id="form"
+              method="#"
+              class="feedback-form"
+              action="./thanks.html"
+            >
+              <fieldset class="feedback-form__wrapper">
+                <legend class="visually-hidden">Зарегестрироваться</legend>
+                <div class="feedback-form__fields">
+                  <input
+                    class="feedback-form__input"
+                    placeholder="Ваше имя*"
+                    type="text"
+                    required
+                  />
+                  <input
+                    class="feedback-form__input"
+                    placeholder="Email*"
+                    type="email"
+                    required
+                  />
+                  <textarea
+                    name="comment"
+                    class="feedback-form__comment"
+                    placeholder="Комментарий"
+                  ></textarea>
+                </div>
+                <button type="submit" class="feedback-form__button btn">
+                  Отправить заявку
+                </button>
+                <p class="feedback-form__info">
+                  Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь с
+                  <a class="feedback-form__info-link" href="#"
+                    >политикой конфиденциальности</a
+                  >
+                </p>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </section>
+      <div class="cookies">
+        <p class="cookies__text">Внимание мы используем cookie-файлы.</p>
+        <p class="cookies__text">
+          Продолжая пользоваться сайтом вы соглашаетесь на их использование.
+        </p>
+        <button class="cookies__button btn">Ок</button>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrapper">
+          <div class="footer__left">
+            <div class="footer__banner">
+              <a class="footer__logo" href="#">F</a>
+              <a class="footer__title" href="#">FitMenu</a>
+            </div>
+            <p class="footer__left-text">
+              Сервис доставки здорового питания для тех, кто заботится
+              о&nbsp;себе и своем теле
+            </p>
+          </div>
+          <div class="footer__middle">
+            <p class="footer__middle-title">Меню</p>
+            <ul class="footer__middle-list">
+              <li class="footer__middle-element">
+                <a href="#" class="footer__middle-link">О нас</a>
+              </li>
+              <li class="footer__middle-element">
+                <a href="#" class="footer__middle-link">Меню</a>
+              </li>
+              <li class="footer__middle-element">
+                <a href="#" class="footer__middle-link">Преимущества</a>
+              </li>
+              <li class="footer__middle-element">
+                <a href="#" class="footer__middle-link">Доставка</a>
+              </li>
+              <li class="footer__middle-element">
+                <a href="#" class="footer__middle-link">Отзывы</a>
+              </li>
+              <li class="footer__middle-element">
+                <a href="#" class="footer__middle-link">Контакты</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__right">
+            <p class="footer__right-title">Контакты</p>
+            <ul class="footer__contacts-list">
+              <li class="footer__contacts-element">
+                <a class="footer__element-content" href="tel:+79991234567">
+                  <svg width="32" height="32" class="footer__icon">
+                    <use xlink:href="images/sprite.svg#phone-icon" />
+                  </svg>
+                  +7 (999) 123-45-67</a
+                >
+              </li>
+              <li class="footer__contacts-element">
+                <a class="footer__element-content" href="mail:info@fitmenu.ru">
+                  <svg width="32" height="32" class="footer__icon">
+                    <use xlink:href="images/sprite.svg#mail-icon" />
+                  </svg>
+                  info@fitmenu.ru</a
+                >
+              </li>
+              <li class="footer__contacts-element">
+                <a class="footer__element-content" href="#">
+                  <svg width="32" height="32" class="footer__icon">
+                    <use xlink:href="images/sprite.svg#marker-icon" />
+                  </svg>
+                  Москва, ул. Спортивная, 15</a
+                >
+              </li>
+            </ul>
+            <p class="footer__right-subtext">
+              FitMenu &mdash; с заботой о вашем результате
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="footer__copyright">
+        <p class="footer__copyright-text">
+          &copy; 2026 FitMenu. Все права защищены.
+        </p>
+      </div>
+      <div style="position: absolute; left: -9999px">
+        Автор работы: Агафонов Е. А.
+      </div>
+    </footer>
+    <script src="scripts.js"></script>
+  </body>
+</html>
