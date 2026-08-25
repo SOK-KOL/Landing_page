@@ -68,9 +68,9 @@
           <div class="intro__banner">
             <div class="container">
               <div class="intro__wrapper">
-                <h1 class="intro__title">Добро пожаловать в Rest</h1>
+                <h1 class="intro__title">Добро пожаловать в&nbsp;Rest</h1>
                 <p class="intro__text">
-                  Изысканные блюда от шеф-повара в уютной атмосфере
+                  Изысканные блюда от&nbsp;шеф-повара в&nbsp;уютной атмосфере
                 </p>
                 <div class="intro__interactive">
                   <a class="intro__button btn" href="#form"
@@ -135,7 +135,7 @@
                   <div class="menu__card-info">
                     <p class="menu__card-title">Шеф-рекомендации</p>
                     <p class="menu__card-text">
-                      Лучшие авторские блюда от шеф-повара
+                      Лучшие авторские блюда от&nbsp;шеф-повара
                     </p>
                     <span class="menu__card-link">Подробнее</span>
                   </div>
@@ -162,7 +162,7 @@
                   <div class="menu__card-info">
                     <p class="menu__card-title">Винная карта</p>
                     <p class="menu__card-text">
-                      Изысканные вина из лучших виноградников
+                      Изысканные вина из&nbsp;лучших виноградников
                     </p>
                     <span class="menu__card-link">Подробнее</span>
                   </div>
@@ -263,12 +263,16 @@
                     name="telephone"
                     required
                   />
-                  <input
-                    class="feedback-form__input"
-                    placeholder="Дата и время"
-                    type="datetime-local"
-                    name="datetime-local"
-                  />
+                  <label for="reservation">
+                    <input
+                      class="feedback-form__input"
+                      placeholder="Дата и время"
+                      type="datetime-local"
+                      name="datetime-local"
+                      id="reservation"
+                      value="2026-08-25T19:00"
+                    />
+                  </label>
                   <textarea
                     name="comment"
                     class="feedback-form__comment"

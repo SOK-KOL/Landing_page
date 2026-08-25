@@ -76,7 +76,11 @@
     font-size: 30px;
     font-weight: 700;
 }
-
+@media (max-width:670px) {
+.footer__title{
+    display: none;
+}
+}
 @media (max-width: 375px) {
     .footer__title {
         font-size: 27px;
