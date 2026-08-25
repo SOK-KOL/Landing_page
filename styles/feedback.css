@@ -179,7 +179,7 @@
 .feedback-form__button {
     width: 100%;
     min-height: 50px;
-    border: none;
+    border: 5px solid #ffbb00;
     font-size: 18px;
     padding: 0;
     margin: 0 0 10px;

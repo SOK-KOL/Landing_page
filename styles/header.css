@@ -67,7 +67,7 @@ header {
     font-weight: 500;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 535px) {
     .header__banner {
         display: none;
     }
@@ -157,7 +157,7 @@ header {
     font-weight: 600;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 670px) {
     .header__button {
         display: none;
     }
