@@ -4,7 +4,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Ресторан Rest</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="images/favicon/site.webmanifest" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -12,10 +30,10 @@
       <div class="container">
         <div class="header__wrapper">
           <div class="header__left">
-            <a class="header__logo" href="#">Нейро</a>
+            <a class="header__logo" href="#">Rest</a>
             <div class="header__banner">
-              <a class="header__title" href="#">Еда</a>
-              <span class="header__slogan">Еда которой не существует</span>
+              <a class="header__title" href="#">Rest</a>
+              <span class="header__slogan">Ресторан изысканной кухни</span>
             </div>
           </div>
           <div class="header__right">
@@ -34,7 +52,7 @@
               </li>
             </ul>
             <button class="burger"></button>
-            <a href="#form" class="header__button btn">Заказать</a>
+            <a href="#form" class="header__button btn">Забронировать</a>
           </div>
         </div>
       </div>
@@ -45,12 +63,14 @@
           <div class="intro__banner">
             <div class="container">
               <div class="intro__wrapper">
-                <h1 class="intro__title">Питание для активной жизни (нет)</h1>
+                <h1 class="intro__title">Добро пожаловать в Rest</h1>
                 <p class="intro__text">
-                  Сбалансированные блюда, созданные нейросетью
+                  Изысканные блюда от шеф-повара в уютной атмосфере
                 </p>
                 <div class="intro__interactive">
-                  <a class="intro__button btn" href="#form">Выбрать меню</a>
+                  <a class="intro__button btn" href="#form"
+                    >Забронировать столик</a
+                  >
                 </div>
               </div>
             </div>
@@ -59,113 +79,112 @@
       </section>
       <section class="menu">
         <div class="container">
-          <p class="menu__prefix">Наше меню (которого нет)</p>
-          <h2 class="menu__title">Блюда на посмотреть</h2>
+          <p class="menu__prefix">Наше меню</p>
+          <h2 class="menu__title">Авторские блюда</h2>
           <ul class="menu__cards-list">
-            <!-- Похудение-->
+            <!-- Сезонное меню-->
             <li class="menu__card-element">
               <a class="menu__card" href="#form">
                 <div class="menu__card-wrapper">
                   <picture class="menu__card-picture">
                     <source
-                      srcset="images/first_card_img.webp"
+                      srcset="images/season_dish.webp"
                       media="(min-width:1440px)"
                       width
                     />
                     <img
-                      src="images/first_card_img.jpg"
-                      alt="Недо-пиксельный бургер"
+                      src="images/season_dish.jpg"
+                      alt="Сезонное блюдо"
                       class="menu__card-img"
                       width="100px"
                       height="70px"
                     />
                   </picture>
                   <div class="menu__card-info">
-                    <p class="menu__card-title">Похудение</p>
-                    <p class="menu__card-text">Легкая и&nbsp;сытная еда.</p>
+                    <p class="menu__card-title">Сезонное меню</p>
+                    <p class="menu__card-text">
+                      Свежие ингредиенты нового сезона.
+                    </p>
                     <span class="menu__card-link">Подробнее</span>
                   </div>
                 </div>
               </a>
             </li>
-            <!-- Набор массы-->
+            <!-- Шеф-рекомендации-->
             <li class="menu__card-element">
               <a class="menu__card" href="#form">
                 <div class="menu__card-wrapper">
                   <picture>
                     <source
-                      srcset="images/second_card_img.webp"
+                      srcset="images/chief_dish.webp"
                       media="(min-width:1440px)"
                     />
                     <img
-                      src="images/second_card_img.jpg"
-                      alt="Пицца"
+                      src="images/chief_dish.jpg"
+                      alt="Шеф-блюдо"
                       class="menu__card-img"
                       width="100px"
                       height="70px"
                     />
                   </picture>
                   <div class="menu__card-info">
-                    <p class="menu__card-title">Набор массы</p>
+                    <p class="menu__card-title">Шеф-рекомендации</p>
                     <p class="menu__card-text">
-                      Пицца никогда не&nbsp;навредит.
+                      Лучшие авторские блюда от шеф-повара.
                     </p>
                     <span class="menu__card-link">Подробнее</span>
                   </div>
                 </div>
               </a>
             </li>
-            <!-- Поддержание формы-->
+            <!-- Винная карта-->
             <li class="menu__card-element">
               <a class="menu__card" href="#form">
                 <div class="menu__card-wrapper">
                   <picture>
                     <source
-                      srcset="images/third_card_img.webp"
+                      srcset="images/wine_menu.webp"
                       media="(min-width:1304px)"
                     />
                     <img
-                      src="images/third_card_img.jpg"
-                      alt="Сбалансированное блюдо"
+                      src="images/wine_menu.jpg"
+                      alt="Винная карта"
                       class="menu__card-img"
                       width="100px"
                       height="70px"
                     />
                   </picture>
                   <div class="menu__card-info">
-                    <p class="menu__card-title">Поддержание формы</p>
+                    <p class="menu__card-title">Винная карта</p>
                     <p class="menu__card-text">
-                      Сбалансированная еда без лишних ограничений.
+                      Изысканные вина из лучших виноградников.
                     </p>
                     <span class="menu__card-link">Подробнее</span>
                   </div>
                 </div>
               </a>
             </li>
-            <!-- Вегетарианское-->
+            <!-- Десерты-->
             <li class="menu__card-element">
               <a class="menu__card" href="#form">
                 <div class="menu__card-wrapper">
                   <picture>
                     <source
-                      srcset="images/fourth_card_img.webp"
+                      srcset="images/dessert.webp"
                       media="(min-width:1304px)"
                       width
                     />
                     <img
-                      src="images/fourth_card_img.jpg"
-                      alt="Вегетарианское блюдо"
+                      src="images/dessert.jpg"
+                      alt="Десерты"
                       class="menu__card-img"
                       width="100px"
                       height="70px"
                     />
                   </picture>
                   <div class="menu__card-info">
-                    <p class="menu__card-title">Вегетарианское еда</p>
-                    <p class="menu__card-text">
-                      Полезная и&nbsp;вкусная еда без продуктов животного
-                      происхождения.
-                    </p>
+                    <p class="menu__card-title">Десерты</p>
+                    <p class="menu__card-text">Идеальное завершение ужина.</p>
                     <span class="menu__card-link">Подробнее</span>
                   </div>
                 </div>
@@ -179,26 +198,26 @@
           <div class="feedback__wrapper">
             <div class="feedback__argumentation">
               <p class="feedback__appeal">Свяжитесь с&nbsp;нами</p>
-              <h2 class="feedback__title">Оставьте заявку</h2>
+              <h2 class="feedback__title">Забронируйте столик</h2>
               <p class="feedback__subtext">
-                Мы&nbsp;подберем для вас оптимальное меню и&nbsp;ответим
+                Мы&nbsp;подберем для вас идеальный столик и&nbsp;ответим
                 на&nbsp;все вопросы
               </p>
               <ul class="feedback__advantage-list">
                 <li class="feedback__advantage-element">
-                  Индивидуальный подбор меню
-                  <svg width="32" height="32" class="feedback__icon--cross">
-                    <use xlink:href="images/sprite.svg#cross-icon" />
+                  Уютная атмосфера
+                  <svg width="32" height="32" class="feedback__icon">
+                    <use xlink:href="images/sprite.svg#check-icon" />
                   </svg>
                 </li>
                 <li class="feedback__advantage-element">
-                  Приготовление еды
-                  <svg width="32" height="32" class="feedback__icon--cross">
-                    <use xlink:href="images/sprite.svg#cross-icon" />
+                  Изысканная кухня
+                  <svg width="32" height="32" class="feedback__icon">
+                    <use xlink:href="images/sprite.svg#check-icon" />
                   </svg>
                 </li>
                 <li class="feedback__advantage-element">
-                  Просто смотреть
+                  Винная карта
                   <svg width="32" height="32" class="feedback__icon">
                     <use xlink:href="images/sprite.svg#check-icon" />
                   </svg>
@@ -226,14 +245,25 @@
                     type="email"
                     required
                   />
+                  <input
+                    class="feedback-form__input"
+                    placeholder="Телефон*"
+                    type="tel"
+                    required
+                  />
+                  <input
+                    class="feedback-form__input"
+                    placeholder="Дата и время"
+                    type="datetime-local"
+                  />
                   <textarea
                     name="comment"
                     class="feedback-form__comment"
-                    placeholder="Комментарий"
+                    placeholder="Комментарий к бронированию"
                   ></textarea>
                 </div>
                 <button type="submit" class="feedback-form__button btn">
-                  Отправить заявку
+                  Забронировать
                 </button>
                 <p class="feedback-form__info">
                   Нажимая на&nbsp;кнопку, вы&nbsp;соглашаетесь с
@@ -259,12 +289,10 @@
         <div class="footer__wrapper">
           <div class="footer__left">
             <div class="footer__banner">
-              <a class="footer__logo" href="#">Нейро</a>
-              <a class="footer__title" href="#">Еда</a>
+              <a class="footer__logo" href="#">Rest</a>
+              <a class="footer__title" href="#">Rest</a>
             </div>
-            <p class="footer__left-text">
-              Не Сервис доставки здорового питания.
-            </p>
+            <p class="footer__left-text">Ресторан изысканной кухни.</p>
           </div>
           <div class="footer__middle">
             <p class="footer__middle-title">Меню</p>
@@ -302,7 +330,7 @@
                   <svg width="32" height="32" class="footer__icon">
                     <use xlink:href="images/sprite.svg#mail-icon" />
                   </svg>
-                  ze.agafonow@yandex.ru</a
+                  rest@restaurant.ru</a
                 >
               </li>
               <li class="footer__contacts-element">
@@ -310,16 +338,16 @@
                   <svg width="32" height="32" class="footer__icon">
                     <use xlink:href="images/sprite.svg#marker-icon" />
                   </svg>
-                  Где-то</a
+                  Москва, ул. Мира, 15</a
                 >
               </li>
             </ul>
-            <p class="footer__right-subtext">Нейро &mdash; просто картинки</p>
+            <p class="footer__right-subtext">Rest &mdash; изысканно и уютно</p>
           </div>
         </div>
       </div>
       <div class="footer__copyright">
-        <p class="footer__copyright-text">&copy; 2026 Нейро</p>
+        <p class="footer__copyright-text">&copy; 2026 Rest</p>
       </div>
       <div style="position: absolute; left: -9999px">
         Автор работы: Агафонов Е. А.

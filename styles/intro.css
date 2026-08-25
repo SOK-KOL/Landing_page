@@ -1,0 +1,133 @@
+.intro {
+    margin: 0 0 50px;
+    border-bottom: 2px solid #c9a84c;
+}
+
+.intro__banner {
+    position: relative;
+    display: flex;
+    padding: 60px 40px;
+    align-items: center;
+    background-image: url(../images/intro.webp);
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+@media (max-width: 1278px) {
+    .intro__banner {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.intro__wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+
+@media (max-width: 1278px) {
+    .intro__wrapper {
+        max-width: unset;
+        text-align: center;
+    }
+}
+
+.intro__title {
+    margin: 0;
+    font-size: 70px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+    color: #e8e0d0;
+    font-family: 'Courier New', monospace;
+    background-color: rgba(75, 50, 120, 0.7);
+}
+
+@media (max-width: 1278px) {
+    .intro__title {
+        font-size: 50px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 1019px) {
+    .intro__title {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 737px) {
+    .intro__title {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 375px) {
+    .intro__title {
+        font-size: 20px;
+    }
+}
+
+.intro__text {
+    font-family: 'Courier New', monospace;
+    font-size: 25px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #e8e0d0;
+    background-color: rgba(75, 50, 120, 0.7);
+}
+
+@media (max-width: 1278px) {
+    .intro__text {
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1019px) {
+    .intro__text {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 737px) {
+    .intro__text {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 376px) {
+    .intro__text {
+        font-size: 14px;
+    }
+}
+
+.intro__interactive {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 1278px) {
+    .intro__interactive {
+        justify-content: center;
+    }
+}
+
+.intro__button {
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 500;
+}
