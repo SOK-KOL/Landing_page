@@ -46,7 +46,7 @@
     margin-bottom: 20px;
     text-align: center;
     font-weight: 600;
-    color: #e8e0d0;
+    color: #ffffff;
     font-family: 'Courier New', monospace;
     background-color: rgba(75, 50, 120, 0.7);
     padding: 20px;
@@ -84,7 +84,7 @@
     margin: 0 auto;
     margin-bottom: 20px;
     font-weight: 600;
-    color: #e8e0d0;
+    color: #ffffff;
     background-color: rgba(75, 50, 120, 0.7);
     padding: 20px;
     border-radius: 10px;
@@ -112,7 +112,7 @@
 
 @media (max-width: 376px) {
     .intro__text {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 
