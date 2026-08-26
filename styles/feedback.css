@@ -80,6 +80,7 @@
 @media (max-width: 511px) {
     .feedback__advantage-list {
         font-size: 14px;
+        
     }
 }
 
@@ -95,6 +96,12 @@
         width: 148px;
         margin: 0 0 0;
         padding: 0 0 0  16px;
+    }
+}
+@media (max-width: 511px) {
+    .feedback__advantage-element{
+        width: 130px;
+        padding: 0 0 0 15px;
     }
 }
 
@@ -126,7 +133,7 @@
     fill: #c0392b;
 }
 
-/* ===== FORM ===== */
+
 .feedback-form__wrapper {
     border: none;
     margin: 0;
@@ -167,13 +174,19 @@
 
 
 
-.feedback-form__label{
-    display: flex;
-    flex-direction: row-reverse;
+
+
+.feedback-form__date-block{
+   display: block;
+}
+
+@media (max-width:563px) {
+    .feedback-form__date-block{
+ display: flex;
     align-items: center;
-   font-size: 18px;
-   justify-content: space-between;
-   display: none;
+    justify-content: center;
+    gap: 10px;
+    }
 }
 
 .feedback-form__comment {
