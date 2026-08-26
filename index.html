@@ -84,7 +84,6 @@
       </section>
       <section class="menu">
         <div class="container">
-          <p class="menu__prefix">Наше меню</p>
           <h2 class="menu__title">Rest-меню</h2>
           <ul class="menu__cards-list">
             <!-- Сезонное меню-->
@@ -198,12 +197,12 @@
           </ul>
         </div>
       </section>
-      <section class="feedback">
+      <section class="feedback" id="form">
         <div class="container">
           <div class="feedback__wrapper">
             <div class="feedback__argumentation">
-              <p class="feedback__appeal">Свяжитесь с&nbsp;нами</p>
-              <h2 class="feedback__title">Ждём вас в Rest</h2>
+              <p class="feedback__appeal">Ждём вас в&nbsp;Rest</p>
+              <h2 class="feedback__title">Свяжитесь с&nbsp;нами</h2>
               <p class="feedback__subtext">
                 Мы&nbsp;подберем для вас идеальный столик и&nbsp;ответим
                 на&nbsp;все вопросы
@@ -230,7 +229,6 @@
               </ul>
             </div>
             <form
-              id="form"
               method="post"
               class="feedback-form"
               data-form-endpoint="aHR0cHM6Ly9mb3Jtc3VibWl0LmNvL3plLmFnYWZvbm93QGdtYWlsLmNvbQ=="
@@ -263,16 +261,17 @@
                     name="telephone"
                     required
                   />
-                  <label for="reservation">
-                    <input
-                      class="feedback-form__input"
-                      placeholder="Дата и время"
-                      type="datetime-local"
-                      name="datetime-local"
-                      id="reservation"
-                      value="2026-08-25T19:00"
-                    />
+                  <label for="reservation" class="feedback-form__label">
+                    Выберите дату для брони
                   </label>
+                  <input
+                    class="feedback-form__input"
+                    placeholder="Дата и время"
+                    type="datetime-local"
+                    name="datetime-local"
+                    id="reservation"
+                    value="2026-08-25T19:00"
+                  />
                   <textarea
                     name="comment"
                     class="feedback-form__comment"
@@ -305,11 +304,11 @@
       <div class="container">
         <div class="footer__wrapper">
           <div class="footer__left">
+            <a class="footer__logo" href="#">Rest</a>
             <div class="footer__banner">
-              <a class="footer__logo" href="#">Rest</a>
               <a class="footer__title" href="#">Rest</a>
+              <span class="footer__slogan">Ресторан изысканной кухни</span>
             </div>
-            <p class="footer__left-text">Ресторан изысканной кухни.</p>
           </div>
           <div class="footer__middle">
             <p class="footer__middle-title">Меню</p>

@@ -11,7 +11,7 @@
     min-height: 300px;
 }
 
-@media (max-width: 834px) {
+@media (max-width: 930px) {
     .feedback__wrapper {
         display: flex;
         flex-direction: column;
@@ -24,7 +24,7 @@
     text-align: left;
 }
 
-@media (max-width: 834px) {
+@media (max-width: 930px) {
     .feedback__argumentation {
         text-align: center;
     }
@@ -67,12 +67,13 @@
     color: #2d2d3f;
 }
 
-@media (max-width: 834px) {
+@media (max-width: 930px) {
     .feedback__advantage-list {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-bottom: 0;
+        gap: 15px;
     }
 }
 
@@ -87,6 +88,14 @@
     position: relative;
     padding: 0 0 0 30px;
     margin: 0 0 10px;
+}
+
+@media (max-width: 930px) {
+    .feedback__advantage-element{
+        width: 148px;
+        margin: 0 0 0;
+        padding: 0 0 0  16px;
+    }
 }
 
 .feedback__advantage-element::before {
@@ -131,7 +140,7 @@
     margin: 0 0 15px;
 }
 
-@media (max-width: 511px) {
+@media (max-width: 563px) {
     .feedback-form__fields {
         display: flex;
         flex-direction: column;
@@ -154,6 +163,17 @@
 .feedback-form__input:focus {
     outline: none;
     border-color: #6b4c9a;
+}
+
+
+
+.feedback-form__label{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+   font-size: 18px;
+   justify-content: space-between;
+   display: none;
 }
 
 .feedback-form__comment {

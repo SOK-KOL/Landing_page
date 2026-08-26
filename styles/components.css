@@ -26,7 +26,7 @@
     background-color: #2d2d3f;
     bottom: 0;
     left: 0;
-    padding: 20px;
+    padding: 8px;
     border-top: 2px solid #c9a84c;
     z-index: 10;
 }
@@ -37,21 +37,21 @@
 
 .cookies__text {
     text-align: center;
-    margin: 0 0 15px;
-    font-size: 20px;
+    margin: 0 0 10px;
+    font-size: 14px;
     color: #e8e0d0;
 }
 
 @media (max-width: 376px) {
     .cookies__text {
-        font-size: 15px;
+        font-size: 10px;
     }
 }
 
 .cookies__button {
-    font-size: 17px;
-    width: 120px;
-    min-height: 40px;
+    font-size: 14px;
+    width: 70px;
+    min-height: 30px;
     border: none;
 }
 

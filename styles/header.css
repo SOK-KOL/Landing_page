@@ -121,6 +121,11 @@ header {
     .burger {
         display: block;
     }
+    @media (max-width: 670px) {
+        .burger{
+            margin-right: 0;
+        }
+    }
 
     .header--open .header__link-list {
         display: flex;
