@@ -4,56 +4,57 @@ const cookies = document.querySelector('.cookies');
 const cookiseBtn = document.querySelector('.cookies__button');
 const form = document.querySelector('#form');
 const datetimeField = document.getElementById('reservation');
-const validator = new JustValidate(form); 
-
-
-validator.addField('#name',[
-    {
-        rule:'required',
-        errorMessage:'Поле обязательно для заполнения'
-    },
-    {
-        rule: "minLength",
-        value: 3,
-        errorMessage: "минимум 3 символа"
-    }
-]).addField('#email',[
-    {
-        rule:'required',
-        errorMessage:'Поле обязательно для заполнения'
-    },
-    {
-        rule:"email",
-        errorMessage:"Не правильно набран email"
-    }
-]).addField('#phone',[
-    {
-        rule:'required',
-        errorMessage:'Поле обязательно для заполнения'
-    },
-    {
-         rule: 'customRegexp',
-    value: /^\+?[1-9]\d{10,14}$/,
-    errorMessage: 'Номер телефона введен неверно (формат: +79991112233)',
-    }
-]).addField("#reservation", [
-   {
-        rule:'required',
-        errorMessage:'Поле обязательно для заполнения'
-    },
- {
+const thanksBtn = document.querySelector('.thanks__btn');
+if(form){
+    const validator = new JustValidate(form);
+    validator.addField('#name',[
+        {
+            rule:'required',
+            errorMessage:'Поле обязательно для заполнения'
+        },
+        {
+            rule: "minLength",
+            value: 3,
+            errorMessage: "минимум 3 символа"
+        }
+    ]).addField('#email',[
+        {
+            rule:'required',
+            errorMessage:'Поле обязательно для заполнения'
+        },
+        {
+            rule:"email",
+            errorMessage:"Не правильно набран email"
+        }
+    ]).addField('#phone',[
+        {
+            rule:'required',
+            errorMessage:'Поле обязательно для заполнения'
+        },
+        {
+             rule: 'customRegexp',
+        value: /^\+?[1-9]\d{10,14}$/,
+        errorMessage: 'Номер телефона введен неверно (формат: +79991112233)',
+        }
+    ]).addField("#reservation", [
+       {
+            rule:'required',
+            errorMessage:'Поле обязательно для заполнения'
+        },
+     {
+        
+        validator: (value) => {
+          if (!value) return false;
+          
+          const selectedDate = new Date(value); 
+          const currentDate = new Date();      
+          return selectedDate > currentDate;
+        },
+        errorMessage: 'Не правильно выбрана дата',
+      }
+    ]);
+} 
     
-    validator: (value) => {
-      if (!value) return false;
-      
-      const selectedDate = new Date(value); 
-      const currentDate = new Date();      
-      return selectedDate > currentDate;
-    },
-    errorMessage: 'Нельзя выбрать прошедшую дату и время',
-  }
-]);
-
 
 
 
@@ -70,11 +71,15 @@ const loadCookies = () =>  {
 }
 loadCookies();
 }
-cookiseBtn.addEventListener('click', function (e) {
-    localStorage.setItem("cookie", true)
-    cookies.classList.remove("cookies--active");
-});
+if(cookiseBtn){
 
+    cookiseBtn.addEventListener('click', function (e) {
+        localStorage.setItem("cookie", true)
+        cookies.classList.remove("cookies--active");
+    });
+}
+
+if(datetimeField){
 const now = new Date();
 const year = now.getFullYear();
 const month = String(now.getMonth() + 1).padStart(2, '0');
@@ -82,5 +87,5 @@ const day = String(now.getDate()).padStart(2, '0');
 const hours = String(now.getHours()).padStart(2, '0');
 const minutes = String(now.getMinutes()).padStart(2, '0');
 const datetimeValue = `${year}-${month}-${day}T${hours}:${minutes}`;
-
 datetimeField.value = datetimeValue;
+}
