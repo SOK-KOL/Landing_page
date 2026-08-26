@@ -94,3 +94,8 @@
 .burger::after {
     bottom: 0;
 }
+
+.just-validate-error-label{
+    padding: 5px;
+       font-size: 13px;
+}

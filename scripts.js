@@ -4,25 +4,74 @@ const cookies = document.querySelector('.cookies');
 const cookiseBtn = document.querySelector('.cookies__button');
 const form = document.querySelector('#form');
 const datetimeField = document.getElementById('reservation');
+const validator = new JustValidate(form); 
 
 
-if (form) {
-    form.action = atob(form.dataset.formEndpoint);
-}
+validator.addField('#name',[
+    {
+        rule:'required',
+        errorMessage:'Поле обязательно для заполнения'
+    },
+    {
+        rule: "minLength",
+        value: 3,
+        errorMessage: "минимум 3 символа"
+    }
+]).addField('#email',[
+    {
+        rule:'required',
+        errorMessage:'Поле обязательно для заполнения'
+    },
+    {
+        rule:"email",
+        errorMessage:"Не правильно набран email"
+    }
+]).addField('#phone',[
+    {
+        rule:'required',
+        errorMessage:'Поле обязательно для заполнения'
+    },
+    {
+         rule: 'customRegexp',
+    value: /^\+?[1-9]\d{10,14}$/,
+    errorMessage: 'Номер телефона введен неверно (формат: +79991112233)',
+    }
+]).addField("#reservation", [
+   {
+        rule:'required',
+        errorMessage:'Поле обязательно для заполнения'
+    },
+ {
+    
+    validator: (value) => {
+      if (!value) return false;
+      
+      const selectedDate = new Date(value); 
+      const currentDate = new Date();      
+      return selectedDate > currentDate;
+    },
+    errorMessage: 'Нельзя выбрать прошедшую дату и время',
+  }
+]);
+
+
+
 
 burger.addEventListener('click', function (e) {
     header.classList.toggle("header--open")
 });
 
-
+const cookie = localStorage.getItem("cookie");
+if(!cookie){
 const loadCookies = () =>  {
     setTimeout(() =>{
     cookies.classList.add("cookies--active")   
     }, 1000) 
 }
-
 loadCookies();
+}
 cookiseBtn.addEventListener('click', function (e) {
+    localStorage.setItem("cookie", true)
     cookies.classList.remove("cookies--active");
 });
 

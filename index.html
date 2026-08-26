@@ -197,7 +197,7 @@
           </ul>
         </div>
       </section>
-      <section class="feedback" id="form">
+      <section class="feedback" id="feedback__form">
         <div class="container">
           <div class="feedback__wrapper">
             <div class="feedback__argumentation">
@@ -232,6 +232,7 @@
               method="post"
               class="feedback-form"
               data-form-endpoint="aHR0cHM6Ly9mb3Jtc3VibWl0LmNvL3plLmFnYWZvbm93QGdtYWlsLmNvbQ=="
+              id="form"
             >
               <fieldset class="feedback-form__wrapper">
                 <legend class="visually-hidden">Зарегестрироваться</legend>
@@ -241,26 +242,34 @@
                     name="_next"
                     value="https://sok-kol.github.io/Landing_page/thanks.html"
                   />
-                  <input
-                    class="feedback-form__input"
-                    placeholder="Ваше имя*"
-                    type="text"
-                    required
-                  />
-                  <input
-                    class="feedback-form__input"
-                    placeholder="Email*"
-                    type="email"
-                    name="email"
-                    required
-                  />
-                  <input
-                    class="feedback-form__input"
-                    placeholder="Телефон*"
-                    type="tel"
-                    name="telephone"
-                    required
-                  />
+                  <div class="feedback-form__group">
+                    <input
+                      id="name"
+                      class="feedback-form__input"
+                      placeholder="Ваше имя*"
+                      type="text"
+                    />
+                  </div>
+                  <div class="feedback-form__group">
+                    <input
+                      id="email"
+                      class="feedback-form__input"
+                      placeholder="Email*"
+                      type="email"
+                      name="email"
+                      required
+                    />
+                  </div>
+                  <div class="feedback-form__group">
+                    <input
+                      id="phone"
+                      class="feedback-form__input"
+                      placeholder="Телефон*"
+                      type="tel"
+                      name="telephone"
+                      required
+                    />
+                  </div>
                   <div class="feedback-form__date-block">
                     <input
                       class="feedback-form__input"
@@ -368,6 +377,7 @@
         Автор работы: Агафонов Е. А.
       </div>
     </footer>
-    <script src="scripts.js"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <script type="module" src="scripts.js"></script>
   </body>
 </html>
