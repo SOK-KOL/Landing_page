@@ -58,6 +58,7 @@ if(form){
         errorMessage: 'Неправильно выбрана дата',
       }
     ]).onSuccess((event) => {
+         console.log("Валидация прошла успешно! Пытаюсь отправить форму...");
         event.target.submit(); 
     });
 } 
