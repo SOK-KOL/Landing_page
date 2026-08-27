@@ -40,10 +40,10 @@ header {
     color: #2d2d3f;
     font-weight: 600;
 }
-@media (max-width:535px) {
+@media (max-width:750px) {
     .header__logo{
-        width: 48px;
-        height: 48px;
+        width: 46px;
+        height: 46px;
     }
 }
 
@@ -73,7 +73,7 @@ header {
     font-weight: 500;
 }
 
-@media (max-width: 535px) {
+@media (max-width: 750px) {
     .header__banner {
         display: none;
     }

@@ -1,16 +1,11 @@
-.menu__prefix {
-    text-align: center;
-    font-size: 20px;
-    text-transform: uppercase;
-    margin: 0 0 10px;
-    color: #6b4c9a;
-}
+
 
 .menu__title {
     text-align: center;
     font-size: 40px;
     margin: 0 0 20px;
     color: #2d2d3f;
+    text-transform: uppercase;
 }
 
 @media (max-width: 1278px) {

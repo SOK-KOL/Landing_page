@@ -16,6 +16,11 @@ if(form){
             rule: "minLength",
             value: 3,
             errorMessage: "минимум 3 символа"
+        },
+        {
+            rule: 'customRegexp',
+            value: /^[a-zа-яё\s-]+$/i, 
+            errorMessage: "Не используйте спец. символы и цифры"
         }
     ]).addField('#email',[
         {
@@ -24,7 +29,7 @@ if(form){
         },
         {
             rule:"email",
-            errorMessage:"Не правильно набран email"
+            errorMessage:"Неправильно набран email"
         }
     ]).addField('#phone',[
         {
@@ -32,9 +37,9 @@ if(form){
             errorMessage:'Поле обязательно для заполнения'
         },
         {
-             rule: 'customRegexp',
-        value: /^\+?[1-9]\d{10,14}$/,
-        errorMessage: 'Номер телефона введен неверно (формат: +79991112233)',
+            rule: 'customRegexp',
+            value: /^\+?[1-9]\d{10,14}$/,
+            errorMessage: 'Номер телефона введен неверно (+79991112233)',
         }
     ]).addField("#reservation", [
        {
@@ -50,7 +55,7 @@ if(form){
           const currentDate = new Date();      
           return selectedDate > currentDate;
         },
-        errorMessage: 'Не правильно выбрана дата',
+        errorMessage: 'Неправильно выбрана дата',
       }
     ]);
 } 
@@ -87,5 +92,35 @@ const day = String(now.getDate()).padStart(2, '0');
 const hours = String(now.getHours()).padStart(2, '0');
 const minutes = String(now.getMinutes()).padStart(2, '0');
 const datetimeValue = `${year}-${month}-${day}T${hours}:${minutes}`;
+datetimeField.min= datetimeValue;
 datetimeField.value = datetimeValue;
 }
+
+
+form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const data={
+        name: form.querySelector('#name').value,
+        email: form.querySelector('#email').value,
+        phone: form.querySelector('#phone').value,
+        datetime: datetimeField.value,
+        comment: form.querySelector('.feedback-form__comment').value
+    };
+
+     try {
+        const response = await fetch('https://server-gzjr.onrender.com/api/booking', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if(result.success){
+            window.location.href = 'thanks.html';
+        }
+
+    } catch (error) {
+        console.error('Ошибка:', error);
+    }
+});
