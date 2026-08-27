@@ -229,21 +229,34 @@
                 </li>
               </ul>
             </div>
-            <form class="feedback-form" id="form">
+            <form
+              method="post"
+              class="feedback-form"
+              action="https://formsubmit.co/ze.agafonow@gmail.com"
+              id="form"
+            >
               <fieldset class="feedback-form__wrapper">
-                <legend class="visually-hidden">Зарегестрироваться</legend>
+                <legend class="visually-hidden">Забронировать столик</legend>
+
+                <!-- Перенаправление на страницу "Спасибо" -->
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://sok-kol.github.io/Landing_page/thanks.html"
+                />
+
+                <!-- Отключаем капчу для теста -->
+                <input type="hidden" name="_captcha" value="false" />
+
                 <div class="feedback-form__fields">
-                  <input
-                    type="hidden"
-                    name="_next"
-                    value="https://sok-kol.github.io/Landing_page/thanks.html"
-                  />
                   <div class="feedback-form__group">
                     <input
                       id="name"
                       class="feedback-form__input"
                       placeholder="Ваше имя*"
                       type="text"
+                      name="name"
+                      required
                     />
                   </div>
                   <div class="feedback-form__group">
@@ -262,7 +275,7 @@
                       class="feedback-form__input"
                       placeholder="Телефон*"
                       type="tel"
-                      name="telephone"
+                      name="phone"
                       required
                     />
                   </div>
@@ -271,9 +284,8 @@
                       class="feedback-form__input"
                       placeholder="Дата и время"
                       type="datetime-local"
-                      name="datetime-local"
+                      name="datetime"
                       id="reservation"
-                      value="2026-08-25T19:00"
                     />
                   </div>
                   <textarea

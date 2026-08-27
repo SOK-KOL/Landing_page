@@ -95,32 +95,3 @@ const datetimeValue = `${year}-${month}-${day}T${hours}:${minutes}`;
 datetimeField.min= datetimeValue;
 datetimeField.value = datetimeValue;
 }
-
-
-form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-    const data={
-        name: form.querySelector('#name').value,
-        email: form.querySelector('#email').value,
-        phone: form.querySelector('#phone').value,
-        datetime: datetimeField.value,
-        comment: form.querySelector('.feedback-form__comment').value
-    };
-
-     try {
-        const response = await fetch('https://server-gzjr.onrender.com/api/booking', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        });
-
-        const result = await response.json();
-
-        if(result.success){
-            window.location.href = 'thanks.html';
-        }
-
-    } catch (error) {
-        console.error('Ошибка:', error);
-    }
-});
