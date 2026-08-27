@@ -57,7 +57,9 @@ if(form){
         },
         errorMessage: 'Неправильно выбрана дата',
       }
-    ]);
+    ]).onSuccess((event) => {
+        event.target.submit(); 
+    });
 } 
     
 
