@@ -74,6 +74,7 @@
 @media (max-width: 375px) {
     .intro__title {
         font-size: 18px;
+        width: 250px;
     }
 }
 
@@ -105,6 +106,7 @@
 @media (max-width: 737px) {
     .intro__text {
         font-size: 17px;
+        max-width: 350px;
     }
 }
 
@@ -112,6 +114,7 @@
     .intro__text {
         font-size: 16px;
         padding: 20px 0;
+        max-width: 280px;
     }
 }
 
@@ -133,5 +136,5 @@
     height: 50px;
     font-size: 18px;
     font-weight: 600;
-padding: 10px;
+    padding: 10px;
 }

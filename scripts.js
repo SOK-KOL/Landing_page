@@ -107,3 +107,28 @@ datetimeField.min= datetimeValue;
 datetimeField.value = datetimeValue;
 }
 
+
+document.getElementById('form').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Отменяем стандартный переход по ссылке FormSubmit
+
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        datetime: document.getElementById('reservation').value, // Используем id="reservation" из вашей формы
+        comment: document.querySelector('.feedback-form__comment').value
+    };
+
+    // Отправляем JSON-запрос на ваш бэкенд Railway
+    await fetch('https://railway.app', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    });
+
+    // После успешного запроса перенаправляем пользователя на страницу "Спасибо"
+    window.location.href = 'https://sok-kol.github.io/Landing_page/thanks.html';
+});
+
