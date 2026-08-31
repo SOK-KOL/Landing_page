@@ -65,11 +65,10 @@ if(form){
     ]).onSuccess(async (event) => {
      console.log("Валидация прошла успешно! Собираем данные...");
      
-     // Создаем объект FormData на основе нашей формы
-     const formElement = event.target; // JustValidate передает саму форму в event.target
+     
+     const formElement = event.target; 
      const dataFromForm = new FormData(formElement);
 
-     // Автоматически и без ошибок собираем поля по их атрибуту name="..." в HTML
      const formData = {
          name: dataFromForm.get('name'),
          email: dataFromForm.get('email'),
@@ -79,7 +78,7 @@ if(form){
      };
 
      // Ваш fetch-запрос остается без изменений
-     await fetch('https://railway.app', {
+     await fetch('https://server-production-9fa69.up.railway.app/api/booking', {
          method: 'POST',
          headers: {
              'Content-Type': 'application/json'
