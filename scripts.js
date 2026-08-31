@@ -77,7 +77,7 @@ if(form){
          comment: dataFromForm.get('comment')
      };
 
-     // Ваш fetch-запрос остается без изменений
+    
      await fetch('https://server-production-9fa69.up.railway.app/api/booking', {
          method: 'POST',
          headers: {
