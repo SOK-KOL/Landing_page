@@ -72,7 +72,7 @@ if(form){
              comment: document.querySelector('.feedback-form__comment').value
          };
 
-         await fetch('https://server-production-9fa69.up.railway.app', {
+         await fetch('https://habrserver-production.up.railway.app/api/booking', {
              method: 'POST',
              headers: {
                  'Content-Type': 'application/json'
