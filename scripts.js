@@ -72,7 +72,7 @@ if(form){
              comment: document.querySelector('.feedback-form__comment').value
          };
 
-         await fetch('server-production-9fa69.up.railway.app', {
+         await fetch('https://server-production-9fa69.up.railway.app', {
              method: 'POST',
              headers: {
                  'Content-Type': 'application/json'
@@ -81,7 +81,7 @@ if(form){
          });
 
      
-         window.location.href = 'https://github.io';
+         window.location.href = 'https://sok-kol.github.io/Landing_page/thanks.html';
     });
 }
     
