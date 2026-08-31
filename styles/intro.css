@@ -73,7 +73,7 @@
 
 @media (max-width: 375px) {
     .intro__title {
-        font-size: 20px;
+        font-size: 18px;
     }
 }
 
@@ -111,6 +111,7 @@
 @media (max-width: 376px) {
     .intro__text {
         font-size: 16px;
+        padding: 20px 0;
     }
 }
 
@@ -132,5 +133,5 @@
     height: 50px;
     font-size: 18px;
     font-weight: 600;
-
+padding: 10px;
 }
