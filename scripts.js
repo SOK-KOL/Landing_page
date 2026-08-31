@@ -63,7 +63,6 @@ if(form){
         errorMessage: 'Неправильно выбрана дата',
       }
     ]).onSuccess(async (event) => {
-         console.log("Валидация прошла успешно! Пытаюсь отправить форму...");
          
          const formData = {
              name: document.getElementById('name').value,
@@ -81,7 +80,7 @@ if(form){
              body: JSON.stringify(formData)
          });
 
-         // Перенаправляем пользователя на страницу "Спасибо"
+     
          window.location.href = 'https://github.io';
     });
 }
