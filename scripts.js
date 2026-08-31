@@ -5,6 +5,17 @@ const cookiseBtn = document.querySelector('.cookies__button');
 const form = document.querySelector('#form');
 const datetimeField = document.getElementById('reservation');
 const thanksBtn = document.querySelector('.thanks__btn');
+const loader = document.querySelector('.loader');
+
+window.addEventListener('load', () => {
+    const loader = document.getElementById('page-loader');
+    loader.classList.add('hidden'); 
+    setTimeout(() => {
+        loader.remove();
+    }, 500);
+});
+
+
 if(form){
     const validator = new JustValidate(form);
     validator.addField('#name',[
@@ -98,3 +109,4 @@ const datetimeValue = `${year}-${month}-${day}T${hours}:${minutes}`;
 datetimeField.min= datetimeValue;
 datetimeField.value = datetimeValue;
 }
+

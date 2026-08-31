@@ -169,7 +169,7 @@ header {
     padding: 10px;
 }
 
-@media (max-width: 670px) {
+@media (max-width: 750px) {
     .header__button {
         display: none;
     }
