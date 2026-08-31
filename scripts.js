@@ -6,15 +6,12 @@ const form = document.querySelector('#form');
 const datetimeField = document.getElementById('reservation');
 const thanksBtn = document.querySelector('.thanks__btn');
 const loader = document.querySelector('.loader');
-
 window.addEventListener('load', () => {
-    const loader = document.getElementById('page-loader');
-    loader.classList.add('hidden'); 
-    setTimeout(() => {
-        loader.remove();
-    }, 500);
+  const loader = document.getElementById('page-loader');
+  if (loader) {
+    loader.remove(); 
+  }
 });
-
 
 if(form){
     const validator = new JustValidate(form);
