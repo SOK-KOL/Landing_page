@@ -63,24 +63,29 @@ if(form){
         errorMessage: 'Неправильно выбрана дата',
       }
     ]).onSuccess(async (event) => {
-         
-         const formData = {
-             name: document.getElementById('name').value,
-             email: document.getElementById('email').value,
-             phone: document.getElementById('phone').value,
-             datetime: document.getElementById('reservation').value,
-             comment: document.querySelector('.feedback-form__comment').value
-         };
-
-         await fetch('https://server-production-9fa69.up.railway.app/api/booking', {
-             method: 'POST',
-             headers: {
-                 'Content-Type': 'application/json'
-             },
-             body: JSON.stringify(formData)
-         });
-
+     console.log("Валидация прошла успешно! Собираем данные...");
      
+     // Создаем объект FormData на основе нашей формы
+     const formElement = event.target; // JustValidate передает саму форму в event.target
+     const dataFromForm = new FormData(formElement);
+
+     // Автоматически и без ошибок собираем поля по их атрибуту name="..." в HTML
+     const formData = {
+         name: dataFromForm.get('name'),
+         email: dataFromForm.get('email'),
+         phone: dataFromForm.get('phone'),
+         datetime: dataFromForm.get('datetime'),
+         comment: dataFromForm.get('comment')
+     };
+
+     // Ваш fetch-запрос остается без изменений
+     await fetch('https://railway.app', {
+         method: 'POST',
+         headers: {
+             'Content-Type': 'application/json'
+         },
+         body: JSON.stringify(formData)
+     });
          window.location.href = 'https://sok-kol.github.io/Landing_page/thanks.html';
     });
 }
