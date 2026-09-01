@@ -78,7 +78,7 @@ if(form){
      };
 
     
-     await fetch('https://server-production-9fa69.up.railway.app/api/booking', {
+     await fetch('https://rest-api.amvera.net/api/booking', {
          method: 'POST',
          headers: {
              'Content-Type': 'application/json'
