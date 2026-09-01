@@ -63,31 +63,50 @@ if(form){
         errorMessage: 'Неправильно выбрана дата',
       }
     ]).onSuccess(async (event) => {
-     console.log("Валидация прошла успешно! Собираем данные...");
-     
-     
-     const formElement = event.target; 
-     const dataFromForm = new FormData(formElement);
-
-     const formData = {
-         name: dataFromForm.get('name'),
-         email: dataFromForm.get('email'),
-         phone: dataFromForm.get('phone'),
-         datetime: dataFromForm.get('datetime'),
-         comment: dataFromForm.get('comment')
-     };
-
+    console.log("Валидация прошла успешно! Собираем данные...");
     
-     await fetch('https://rest-api-ze-agafonow.amvera.io/api/booking', {
-         method: 'POST',
-         headers: {
-             'Content-Type': 'application/json'
-         },
-         body: JSON.stringify(formData)
-     });
-         window.location.href = 'https://sok-kol.github.io/Landing_page/thanks.html';
-    });
-}
+    const formElement = event.target; 
+    const dataFromForm = new FormData(formElement);
+
+    const formData = {
+        name: dataFromForm.get('name'),
+        email: dataFromForm.get('email'),
+        phone: dataFromForm.get('phone'),
+        datetime: dataFromForm.get('datetime'),
+        comment: dataFromForm.get('comment')
+    };
+
+    // Показываем лоадер (если есть)
+    if (loader) loader.style.display = 'block';
+
+    try {
+        const response = await fetch('https://rest-api-ze-agafonow.amvera.io/api/booking', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        // Проверяем статус ответа
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Ошибка сервера');
+        }
+
+        const result = await response.json();
+        console.log('Успешно отправлено:', result);
+
+        window.location.href = 'https://sok-kol.github.io/Landing_page/thanks.html';
+
+    } catch (error) {
+        console.error('Ошибка при отправке:', error);
+        alert('Не удалось отправить заявку: ' + error.message);
+        
+        // Скрываем лоадер
+        if (loader) loader.style.display = 'none';
+    }
+})
     
 
 
@@ -124,4 +143,4 @@ const datetimeValue = `${year}-${month}-${day}T${hours}:${minutes}`;
 datetimeField.min= datetimeValue;
 datetimeField.value = datetimeValue;
 }
-
+}
