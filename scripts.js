@@ -78,7 +78,7 @@ if(form){
      };
 
     
-     await fetch('https://amvera-ze-agafonow-run-rest-api.amvera.net/api/booking', {
+     await fetch('https://amvera-ze-agafonow-run-rest-api/api/booking', {
          method: 'POST',
          headers: {
              'Content-Type': 'application/json'
