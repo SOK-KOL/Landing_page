@@ -4,20 +4,21 @@ const cookies = document.querySelector('.cookies');
 const cookiseBtn = document.querySelector('.cookies__button');
 const form = document.querySelector('#form');
 const datetimeField = document.getElementById('reservation');
-const thanksBtn = document.querySelector('.thanks__btn');
 const loader = document.querySelector('.loader');
+
 window.addEventListener('load', () => {
-  const loader = document.getElementById('page-loader');
-  if (loader) {
-    loader.remove(); 
+  const loaderElement = document.getElementById('page-loader');
+  if (loaderElement) {
+    loaderElement.remove();
   }
 });
-if(form){
+
+if (form) {
     const validator = new JustValidate(form);
-    validator.addField('#name',[
+    validator.addField('#name', [
         {
-            rule:'required',
-            errorMessage:'Поле обязательно для заполнения'
+            rule: 'required',
+            errorMessage: 'Поле обязательно для заполнения'
         },
         {
             rule: "minLength",
@@ -26,22 +27,22 @@ if(form){
         },
         {
             rule: 'customRegexp',
-            value: /^[a-zа-яё\s-]+$/i, 
+            value: /^[a-zа-яё\s-]+$/i,
             errorMessage: "Не используйте спец. символы и цифры"
         }
-    ]).addField('#email',[
+    ]).addField('#email', [
         {
-            rule:'required',
-            errorMessage:'Поле обязательно для заполнения'
+            rule: 'required',
+            errorMessage: 'Поле обязательно для заполнения'
         },
         {
-            rule:"email",
-            errorMessage:"Неправильно набран email"
+            rule: "email",
+            errorMessage: "Неправильно набран email"
         }
-    ]).addField('#phone',[
+    ]).addField('#phone', [
         {
-            rule:'required',
-            errorMessage:'Поле обязательно для заполнения'
+            rule: 'required',
+            errorMessage: 'Поле обязательно для заполнения'
         },
         {
             rule: 'customRegexp',
@@ -49,98 +50,83 @@ if(form){
             errorMessage: 'Номер телефона введен неверно (+79991112233)',
         }
     ]).addField("#reservation", [
-       {
-            rule:'required',
-            errorMessage:'Поле обязательно для заполнения'
+        {
+            rule: 'required',
+            errorMessage: 'Поле обязательно для заполнения'
         },
-     {
-        validator: (value) => {
-          if (!value) return false;
-          const selectedDate = new Date(value); 
-          const currentDate = new Date();      
-          return selectedDate > currentDate;
-        },
-        errorMessage: 'Неправильно выбрана дата',
-      }
-    ]).onSuccess(async (event) => {
-    console.log("Валидация прошла успешно! Собираем данные...");
-    
-    const formElement = event.target; 
-    const dataFromForm = new FormData(formElement);
-
-    const formData = {
-        name: dataFromForm.get('name'),
-        email: dataFromForm.get('email'),
-        phone: dataFromForm.get('phone'),
-        datetime: dataFromForm.get('datetime'),
-        comment: dataFromForm.get('comment')
-    };
-
-    // Показываем лоадер (если есть)
-    if (loader) loader.style.display = 'block';
-
-    try {
-        const response = await fetch('https://rest-api-ze-agafonow.amvera.io/api/booking', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
+        {
+            validator: (value) => {
+                if (!value) return false;
+                const selectedDate = new Date(value);
+                const currentDate = new Date();
+                return selectedDate > currentDate;
             },
-            body: JSON.stringify(formData)
-        });
-
-        // Проверяем статус ответа
-        if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.message || 'Ошибка сервера');
+            errorMessage: 'Неправильно выбрана дата',
         }
+    ]).onSuccess(async (event) => {
+        const formElement = event.target;
+        const dataFromForm = new FormData(formElement);
 
-        const result = await response.json();
-        console.log('Успешно отправлено:', result);
+        const formData = {
+            name: dataFromForm.get('name'),
+            email: dataFromForm.get('email'),
+            phone: dataFromForm.get('phone'),
+            datetime: dataFromForm.get('datetime'),
+            comment: dataFromForm.get('comment')
+        };
 
-        window.location.href = 'https://sok-kol.github.io/Landing_page/thanks.html';
+        if (loader) loader.style.display = 'block';
 
-    } catch (error) {
-        console.error('Ошибка при отправке:', error);
-        alert('Не удалось отправить заявку: ' + error.message);
-        
-        // Скрываем лоадер
-        if (loader) loader.style.display = 'none';
-    }
-})
-    
+        try {
+            const response = await fetch('https://rest-api-ze-agafonow.amvera.io/api/booking', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
 
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Ошибка сервера');
+            }
 
+            await response.json();
+            window.location.href = 'https://sok-kol.github.io/Landing_page/thanks.html';
+
+        } catch (error) {
+            alert('Не удалось отправить заявку: ' + error.message);
+            if (loader) loader.style.display = 'none';
+        }
+    });
+}
 
 burger.addEventListener('click', function (e) {
-    header.classList.toggle("header--open")
+    header.classList.toggle("header--open");
 });
 
 const cookie = localStorage.getItem("cookie");
-if(!cookie){
-const loadCookies = () =>  {
-    setTimeout(() =>{
-    cookies.classList.add("cookies--active")   
-    }, 1000) 
+if (!cookie) {
+    setTimeout(() => {
+        cookies.classList.add("cookies--active");
+    }, 1000);
 }
-loadCookies();
-}
-if(cookiseBtn){
 
+if (cookiseBtn) {
     cookiseBtn.addEventListener('click', function (e) {
-        localStorage.setItem("cookie", true)
+        localStorage.setItem("cookie", true);
         cookies.classList.remove("cookies--active");
     });
 }
 
-if(datetimeField){
-const now = new Date();
-const year = now.getFullYear();
-const month = String(now.getMonth() + 1).padStart(2, '0');
-const day = String(now.getDate()).padStart(2, '0');
-const hours = String(now.getHours()).padStart(2, '0');
-const minutes = String(now.getMinutes()).padStart(2, '0');
-const datetimeValue = `${year}-${month}-${day}T${hours}:${minutes}`;
-datetimeField.min= datetimeValue;
-datetimeField.value = datetimeValue;
-}
+if (datetimeField) {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const datetimeValue = `${year}-${month}-${day}T${hours}:${minutes}`;
+    datetimeField.min = datetimeValue;
+    datetimeField.value = datetimeValue;
 }
