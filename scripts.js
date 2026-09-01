@@ -95,8 +95,7 @@ if (form) {
             window.location.href = 'https://sok-kol.github.io/Landing_page/thanks.html';
 
         } catch (error) {
-            alert('Не удалось отправить заявку: ' + error.message);
-            if (loader) loader.style.display = 'none';
+           console.log(error.message);
         }
     });
 }
