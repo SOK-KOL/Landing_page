@@ -125,7 +125,7 @@ if (datetimeField) {
     const day = String(now.getDate()).padStart(2, '0');
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
-    const datetimeValue = `${year}-${month}-${day}T${hours}:${minutes}`;
+    const datetimeValue = `${year}-${month}-${day} T ${hours}:${minutes}`;
     datetimeField.min = datetimeValue;
     datetimeField.value = datetimeValue;
 }
